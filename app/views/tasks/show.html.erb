@@ -2,7 +2,6 @@
 
 <h3><%= @task.content %></h3>
 
-
-<p><%= link_to "編集",edit_task_path %></p>
-<p><%= link_to "削除",@task, method: :delete, data: { confirm: '本当に削除してよろしいですか？' } %></p>
-<p><%= link_to "タスク一覧へ",tasks_path %></p>
+<%= link_to "タスク一覧へ",tasks_path %>
+<%= link_to "編集",edit_task_path %>
+<%= link_to "削除",@task, method: :delete, data: { confirm: '本当に削除してよろしいですか？' } %>
