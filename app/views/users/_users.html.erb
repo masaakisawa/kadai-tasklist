@@ -1,0 +1,15 @@
+<% if @users.any? %>
+  <ul>
+    <% @users.each do |user| %>
+      <li>
+        <%= user.name %>(<%= link_to "プロフィール詳細", user_path(user) %>)
+        
+      </li>
+    <% end %>
+  </ul>
+  
+    
+  <%= paginate @users %>
+  
+<% end %>
+  

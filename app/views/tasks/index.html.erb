@@ -1,9 +1,9 @@
-<h1>タスク一覧</h1>
+<h2><%= current_user.name %>のタスク一覧</h2>
 
 <ul>
-    <% @task.each do|task| %>
+  <% @task.each do|task| %>
     <li><%= task.status %>:<%= link_to task.content,task %></li>
-    <% end %>
+  <% end %>
 </ul>
-
+  
 <%= link_to "タスク新規作成",new_task_path %>

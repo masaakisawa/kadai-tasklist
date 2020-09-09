@@ -1,0 +1,7 @@
+<header>
+  <% if logged_in? %>
+    <%= link_to "プロフィール", @user %> <%= link_to "ログアウト", logout_path, method: :delete %>
+  <% else %>
+    <%= link_to "ログイン", login_path %> <%= link_to "新規登録", signup_path %>
+  <% end %>
+</header>

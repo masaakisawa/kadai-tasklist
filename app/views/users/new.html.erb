@@ -1,0 +1,19 @@
+<h2>ユーザー登録</h2>
+
+<%= form_with(model:@user, local: true) do |f| %>
+
+  <%= f.label :name, "名前" %>
+  <%= f.text_field :name %>
+  
+  <%= f.label :email, "メールアドレス" %>
+  <%= f.text_field :email %>
+  
+  <%= f.label :password, "パスワード" %>
+  <%= f.text_field :password %>
+
+  <%= f.label :password_confirmation, "パスワードの確認" %>
+  <%= f.text_field :password_confirmation %>
+  
+  <%= f.submit "登録" %>
+  
+<% end %>
