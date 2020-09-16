@@ -1,5 +1,5 @@
 class TasksController < ApplicationController
-  before_action :require_user_logged_in, only: [:index, :show, :edit]
+  before_action :require_user_logged_in
   
   def index
     @task = current_user.tasks.all
@@ -29,7 +29,7 @@ class TasksController < ApplicationController
   end
 
   def update
-    @task = current_user.tasks..find(params[:id])
+    @task = current_user.tasks.find(params[:id])
     if @task.update(task_params)
       flash[:success]="編集が正常に完了されました"
       redirect_to @task
@@ -42,7 +42,6 @@ class TasksController < ApplicationController
   def destroy
     @task = current_user.tasks.find(params[:id])
     @task.destroy
-    @task.save
     flash[:success] = "タスクが正常に削除されました"
     redirect_to tasks_url
   end
