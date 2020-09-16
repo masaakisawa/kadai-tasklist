@@ -17,5 +17,4 @@ Rails.application.routes.draw do
   get 'users/create'
   resources :users, only: [:index, :show, :create]
 
-
 end
